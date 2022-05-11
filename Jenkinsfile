@@ -1,4 +1,4 @@
-@library(['piper-lib') _
+@library(['piper-lib']) _
           pipeline{
             agent any
             options {
@@ -15,7 +15,7 @@
               stage('Deploy') { 
                 when { anyOf { branch 'main' } } 
                 steps {
-                  echo "Deploying..."
+                  echo "Deploying...."
                 }
               }
             }
