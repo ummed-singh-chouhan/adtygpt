@@ -9,5 +9,5 @@ remoteRepositoryURL: "https://github.com/adtygpt/adtygpt"
 role: "SOURCE"
 vSID: "DEV"
 verbose: true
-type: "GITHUB"
+type: "GIT"
 rollback: false
