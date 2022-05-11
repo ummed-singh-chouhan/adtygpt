@@ -6,7 +6,7 @@
             }
             stages {
               stage('prepare') {
-                when { anyof { branch 'main' } }
+                when { anyOf { branch 'main' } }
                 steps { 
                   checkout scm
                   setupCommonPipelineEnvironment script:this 
