@@ -16,7 +16,7 @@
                 when { anyOf { branch 'main' } } 
                 steps {
                   gctsDeploy(
-                            Script: this 
+                            script : this 
                 )
               }
             }
