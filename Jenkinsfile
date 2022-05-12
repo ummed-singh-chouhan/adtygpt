@@ -15,9 +15,8 @@
               stage('Deploy') { 
                 when { anyOf { branch 'main' } } 
                 steps {
-                  gctsDeploy(
-                            script : this 
-                )
+                 echo "Deploying..."
+                
               }
             }
           }
