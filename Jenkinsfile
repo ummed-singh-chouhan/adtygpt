@@ -6,14 +6,14 @@
             }
             stages {
               stage('prepare') {
-                when { anyOf { branch 'master' } }
+                when { anyOf { branch 'main' } }
                 steps { 
                   checkout scm
                   setupCommonPipelineEnvironment script:this 
                 }
               }
               stage('Deploy') { 
-                when { anyOf { branch 'master' } } 
+                when { anyOf { branch 'main' } } 
                 steps {
                  echo "Deploying..."
                 
