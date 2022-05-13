@@ -1,7 +1,7 @@
 general: 
 steps:
 gctsDeploy:
-host: "https://s4hana2020.cognitusconsulting.com:44310"
+host: "https://52.191.26.64:8001"
 client: "200"
 abapCredentialsId: "ADITYA_CREDENTIALS"
 repository: "adtygpt-adtygpt"
