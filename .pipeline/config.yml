@@ -1,12 +1,12 @@
 general: 
 steps:
 gctsDeploy:
-host: "https://s4hana2021.cognitusconsulting.com:8001"
+host: "https://s4hana2021.celebaltech.com:8001"
 client: "200"
 abapCredentialsId: "ADITYA_CREDENTIALS"
 repository: "adtygpt-adtygpt"
 remoteRepositoryURL: "https://github.com/adtygpt/adtygpt"
-role: "SOURCE"
+role: "DEVELOPMENT"
 vSID: "DEV"
 verbose: true
 type: "GITHUB"
