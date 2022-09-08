@@ -6,7 +6,7 @@ pipeline {
   }
 
   environment {
-    DEMOCREDS = 'ADITYA_CREDENTIALS'
+    DEMOCREDS = 'ADITYA-CREDENTIALS'
     HOST = 'S4HANA2021.celebaltech.com:8010'
     CLIENT = '200'
     REPO = 'adtygpt-adtygpt'
