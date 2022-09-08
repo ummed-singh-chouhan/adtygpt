@@ -28,7 +28,7 @@ pipeline {
           abapCredentialsId: DEMOCREDS,
           repository: REPO,
           remoteRepositoryURL: REPO_URL,
-          role: 'Provided',
+          role: 'SOURCE',
           vSID: 'DEV')
 
       }
