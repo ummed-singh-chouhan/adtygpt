@@ -7,7 +7,7 @@ pipeline {
 
   environment {
     DEMOCREDS = 'ADITYA-CREDENTIALS'
-    HOST = 'S4HANA2021.celebaltech.com:8010'
+    HOST = 'http://S4HANA2021.celebaltech.com:8010'
     CLIENT = '200'
     REPO = 'adtygpt-adtygpt'
     REPO_URL = "https://github.com/adtygpt/adtygpt"
