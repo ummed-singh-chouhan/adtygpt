@@ -1,0 +1,34 @@
+[
+ {
+  "table":"ARCH_USR",
+  "data":
+  [
+   {
+    "OBJECT":"MM_EINA",
+    "FILENAME":"ARCHIVE_DATA_FILE",
+    "ARCH_CNTRL":"",
+    "ARCH_LINK":"X",
+    "ARCH_SIZE":1,
+    "ARCH_COUNT":1000,
+    "ARCH_DEL":"X",
+    "ARCH_COMIT":100,
+    "ARCH_LDOCU":"ARCHIVE",
+    "ADMI_JOBSY":"",
+    "DELETE_SYS":"",
+    "PROD_VARIA":"SAP&PROD",
+    "TEST_VARIA":"SAP&TEST",
+    "ARCH_INDEX":"",
+    "ARCH_LAST":"",
+    "LAST_VARIA":"",
+    "CREP":"",
+    "STORE_FRST":"",
+    "READARCSYS":"",
+    "BTCEVENTID":"",
+    "BTCEVTPARM":"",
+    "DEL_EVENT":"",
+    "DEL_REPLACED":"",
+    "RESPONSIBLE":""
+   }
+  ]
+ }
+]

@@ -1,0 +1,18 @@
+[
+ {
+  "table":"ARCH_USR",
+  "index":
+  [
+   {
+    "columns":
+    [
+     {
+      "key":"OBJECT",
+      "value":"MM_EINA"
+     }
+    ],
+    "hash":"ea9Vo295usmsCDHZQ+zRj0UIk10="
+   }
+  ]
+ }
+]
