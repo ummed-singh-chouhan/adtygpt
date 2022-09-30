@@ -13,7 +13,9 @@ stages:
     jobs:
       - job: downloadPiper
         pool:
-          name: SAP-AgentPool
+          name: Default
+          demands:
+            - agent.name -equals SAP-AgentPool
         steps:
         - checkout: none
         - task: Cache@2
@@ -38,7 +40,9 @@ stages:
       #variables:
       #- group: development
       pool:
-        name: SAP-AgentPool
+          name: Default
+          demands:
+            - agent.name -equals SAP-AgentPool
       steps:
       - task: Cache@2
         inputs:
@@ -54,7 +58,9 @@ stages:
       #variables:
       #- group: development
       pool:
-        name: SAP-AgentPool
+          name: Default
+          demands:
+            - agent.name -equals SAP-AgentPool
       steps:
       - task: Cache@2
         inputs:
