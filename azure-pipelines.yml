@@ -50,7 +50,7 @@ stages:
           path: bin 
         displayName: gCTS Deploy
       - script: |
-          bin/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(DEMOCREDS) --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID) --commit "0d264a0"
+          bin/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --username $(DEMOCREDS) --password $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID) --commit "0d264a0"
 
   - stage: ABAP_Quality_Checks
     jobs:
