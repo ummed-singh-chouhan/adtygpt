@@ -13,7 +13,7 @@ stages:
     jobs:
       - job: downloadPiper
         pool:
-          vmImage: ubuntu-latest
+          name: SAP-AgentPool
         steps:
         - checkout: none
         - task: Cache@2
@@ -38,7 +38,7 @@ stages:
       #variables:
       #- group: development
       pool:
-        vmImage: 'ubuntu-latest'
+        name: SAP-AgentPool
       steps:
       - task: Cache@2
         inputs:
@@ -54,7 +54,7 @@ stages:
       #variables:
       #- group: development
       pool:
-        vmImage: 'ubuntu-latest'
+        name: SAP-AgentPool
       steps:
       - task: Cache@2
         inputs:
