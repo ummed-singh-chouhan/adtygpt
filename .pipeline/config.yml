@@ -3,6 +3,8 @@ steps:
  gctsDeploy:
   host: "http://S4HANA2021.celebaltech.com:8010"
   client: "200"
+  username: adgupta
+  password: Celebal$2103
   abapCredentialsId: "DEMOCREDS"
   repository: "adtygpt-adtygpt"
   remoteRepositoryURL: "https://github.com/adtygpt/adtygpt"
