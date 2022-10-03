@@ -51,7 +51,7 @@ stages:
           path: bin 
         displayName: gCTS Deploy
       - script: |
-          bin/piper gctsDeploy --verbose --host http://52.191.26.64:8010 --client $(ABAP-CLIENT)  --username abapCredentialsId Aditya.gupta1@celebaltech.com --password abapCredentialsId $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID)
+          bin/piper gctsDeploy --verbose --host $(ABAP-HOST) --client $(ABAP-CLIENT)  --username abapCredentialsId $(DEMOCREDS) --password abapCredentialsId $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID)
 
   - stage: ABAP_Quality_Checks
     jobs:
