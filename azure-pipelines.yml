@@ -25,9 +25,9 @@ stages:
             cacheHitVar: FOUND_PIPER
           displayName: Cache piper cli binary
         - script: |
-              mkdir -p binSAP
-              curl -L --output binSAP/piper https://github.com/SAP/jenkins-library/releases/latest/download/piper_master
-              chmod +x binSAP/piper
+              #mkdir -p bin
+              curl -L --output $(System.DefaultWorkingDirectory)/piper https://github.com/SAP/jenkins-library/releases/latest/download/piper_master
+              chmod +x $(System.DefaultWorkingDirectory)/piper
           condition: ne(variables.FOUND_PIPER, 'true')
           displayName: 'Download Piper'
         - script: $(System.DefaultWorkingDirectory)/piper version
