@@ -6,7 +6,7 @@ steps:
   abapCredentialsId: $(DEMOCREDS)
   repository: "adtygpt-adtygpt"
   remoteRepositoryURL: "https://github.com/adtygpt/adtygpt"
-  role: "SOURCE"
+  role: "TARGET"
   vSID: "DEV"
   Type: "GIT"
   verbose: true
