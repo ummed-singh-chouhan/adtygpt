@@ -21,7 +21,7 @@ stages:
         - task: Cache@2
           inputs:
             key: piper-cli-official
-            path: binSAP
+            path: $(System.DefaultWorkingDirectory)
             cacheHitVar: FOUND_PIPER
           displayName: Cache piper cli binary
         - script: |
@@ -30,7 +30,7 @@ stages:
               chmod +x binSAP/piper
           condition: ne(variables.FOUND_PIPER, 'true')
           displayName: 'Download Piper'
-        - script: binSAP/piper version
+        - script: $(System.DefaultWorkingDirectory)/piper version
           displayName: 'Piper Version'
 
 
@@ -48,10 +48,10 @@ stages:
       - task: Cache@2
         inputs:
           key: piper-cli-official
-          path: binSAP
+          path: $(System.DefaultWorkingDirectory)
         displayName: gCTS Deploy
       - script: |
-          binSAP/piper gctsDeploy --verbose --host $(ABAP-HOST) --client $(ABAP-CLIENT)  --username abapCredentialsId $(DEMOCREDS) --password abapCredentialsId Celebal@12345 --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID)
+          $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --host $(ABAP-HOST) --client $(ABAP-CLIENT)  --username abapCredentialsId $(DEMOCREDS) --password abapCredentialsId Celebal@12345 --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID)
 
   - stage: ABAP_Quality_Checks
     jobs:
@@ -66,7 +66,7 @@ stages:
       - task: Cache@2
         inputs:
           key: piper-cli-official
-          path: binSAP
+          path: $(System.DefaultWorkingDirectory)
         displayName: "ABAP Checks"
       - script: |
-          binSAP/piper gctsExecuteABAPQualityChecks --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(ABAP-USER) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
+          $(System.DefaultWorkingDirectory)/piper gctsExecuteABAPQualityChecks --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(ABAP-USER) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
