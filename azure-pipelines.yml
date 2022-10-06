@@ -51,7 +51,7 @@ stages:
           path: $(System.DefaultWorkingDirectory)
         displayName: gCTS Deploy
       - script: |
-          $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --host $(ABAP-HOST) --client $(ABAP-CLIENT)  --username $(DEMOCREDS) --password Celebal@123 --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID)
+          $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --host $(ABAP-HOST) --client $(ABAP-CLIENT)  --username $(DEMOCREDS) --password $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID)
 
   - stage: ABAP_Quality_Checks
     jobs:
