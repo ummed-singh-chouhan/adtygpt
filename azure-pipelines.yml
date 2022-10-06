@@ -26,7 +26,7 @@ stages:
           displayName: Cache piper cli binary
         - script: |
               #mkdir -p bin
-              curl -L --output $(System.DefaultWorkingDirectory)/piper https://github.com/SAP/jenkins-library/releases/latest/download/piper_master
+              curl --insecure --silent --location --write-out '%{http_code}' --output $(System.DefaultWorkingDirectory)/piper https://github.com/SAP/jenkins-library/releases/latest/download/piper_master
               chmod +x $(System.DefaultWorkingDirectory)/piper
           condition: ne(variables.FOUND_PIPER, 'true')
           displayName: 'Download Piper'
@@ -38,8 +38,6 @@ stages:
   - stage: gCTDS_Deploy
     jobs:
     - job: gctsDeploy
-      #variables:
-      #- group: development
       pool:
           name: Default
           demands:
@@ -51,7 +49,7 @@ stages:
           path: $(System.DefaultWorkingDirectory)
         displayName: gCTS Deploy
       - script: |
-          $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --host $(ABAP-HOST) --client $(ABAP-CLIENT)  --username $(DEMOCREDS) --password $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID)
+          $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --host $(ABAP-HOST) --client $(ABAP-CLIENT)  --username $(DEMOCREDS) --password Celebal@12345 --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID)
 
   - stage: ABAP_Quality_Checks
     jobs:
