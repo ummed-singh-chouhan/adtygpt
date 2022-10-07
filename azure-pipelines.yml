@@ -15,7 +15,7 @@ stages:
         pool:
           name: Default
           demands:
-            - agent.name -equals SAP-AgentPool
+            - agent.name -equals SAP-AgentPool1
         steps:
         - checkout: none
         - task: Cache@2
@@ -43,7 +43,7 @@ stages:
       pool:
           name: Default
           demands:
-            - agent.name -equals SAP-AgentPool
+            - agent.name -equals SAP-AgentPool1
       steps:
       - task: Cache@2
         inputs:
@@ -62,7 +62,7 @@ stages:
       pool:
           name: Default
           demands:
-            - agent.name -equals SAP-AgentPool
+            - agent.name -equals SAP-AgentPool1
       steps:
       - task: Cache@2
         inputs:
