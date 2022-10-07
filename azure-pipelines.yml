@@ -36,7 +36,7 @@ stages:
           displayName: 'Piper Version'
 
 
-####### Piper Libraries #####
+####### Piper Libraries ####
   - stage: gCTDS_Deploy
     jobs:
     - job: gctsDeploy
