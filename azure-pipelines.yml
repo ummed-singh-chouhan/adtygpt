@@ -26,7 +26,7 @@ stages:
           displayName: Cache piper cli binary
         - script: |
               #mkdir -p bin
-              curl -u $(username):$(Token) https://api.github.com/user
+              curl -u $(username):$(Token) https://api.github.com/users/adtygpt/repos
               curl --insecure --silent --location --write-out '%{http_code}' --output $(System.DefaultWorkingDirectory)/piper https://github.com/SAP/jenkins-library/releases/latest/download/piper_master
               chmod +x $(System.DefaultWorkingDirectory)/piper
           condition: ne(variables.FOUND_PIPER, 'true')
@@ -50,7 +50,7 @@ stages:
           path: $(System.DefaultWorkingDirectory)
         displayName: gCTS Deploy
       - script: |
-          curl -u $(username):$(Token) https://api.github.com/user
+          curl -u $(username):$(Token) https://api.github.com/users/adtygpt/repos
           $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --username $(DEMOCREDS) --password $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID DEV
   - stage: ABAP_Quality_Checks
     jobs:
