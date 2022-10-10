@@ -49,7 +49,7 @@ stages:
           path: $(System.DefaultWorkingDirectory)
         displayName: gCTS Deploy
       - script: |
-          $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --username $(DEMOCREDS) --password Celebal@123 --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID DEV
+          $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --username $(DEMOCREDS) --password $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID DEV
   - stage: ABAP_Quality_Checks
     jobs:
     - job: executeABAPQualityChecks
@@ -66,4 +66,4 @@ stages:
           path: $(System.DefaultWorkingDirectory)
         displayName: "ABAP Checks"
       - script: |
-          $(System.DefaultWorkingDirectory)/piper gctsExecuteABAPQualityChecks --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(ABAP-USER) --remoteRepositoryURL $(REPO-URL) -role TARGET--vSID DEV --commit "0d264a0"
+          $(System.DefaultWorkingDirectory)/piper gctsExecuteABAPQualityChecks --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(DEOMCREDS) --remoteRepositoryURL $(REPO-URL) -role TARGET--vSID DEV --commit "0d264a0"
