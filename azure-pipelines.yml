@@ -44,7 +44,7 @@ stages:
             - agent.name -equals SAP-AgentPool1
       steps:
       - checkout: none
-        - task: Cache@2
+      - task: Cache@2
           inputs:
             key: piper-cli-official
             path: $(System.DefaultWorkingDirectory)
@@ -54,10 +54,10 @@ stages:
           #key: piper-cli-official
           #path: $(System.DefaultWorkingDirectory)
           displayName: gCTS Deploy
-        - script: |
-             $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --username $(DEMOCREDS) --password $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID DEV
-          condition: ne(variables.FOUND_PIPER, 'true')
-          displayName: 'Download Piper'   
+      - script: |
+           $(System.DefaultWorkingDirectory)/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --username $(DEMOCREDS) --password $(ABAP-PW) --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID DEV
+        condition: ne(variables.FOUND_PIPER, 'true')
+        displayName: 'Download Piper'   
   - stage: ABAP_Quality_Checks
     jobs:
     - job: executeABAPQualityChecks
